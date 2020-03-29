@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+  get 'static_pages/help'
+  get 'static_pages/about'
+  resources :microposts
+  resources :users
+  root 'users#index'
   get '/posts' => "post#index"
-  root 'application#goodbye'
 end
