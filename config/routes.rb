@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/new'
   get 'persons/new'
   root 'static_pages#home'
   get '/help' => 'static_pages#help'
@@ -6,8 +7,7 @@ Rails.application.routes.draw do
   get '/contact' => 'static_pages#contact'
 
   resources :microposts
-  resources :users
   get '/posts' => "post#index"
   get 'posts/index'
-  get '/signup' => 'persons#new'
+  get '/signup' => 'users#new'
 end
