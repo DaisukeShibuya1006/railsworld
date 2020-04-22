@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get '/posts' => "post#index"
   get 'posts/index'
   get '/signup' => 'users#new'
+  post '/singup' => 'users#create'
+  resources :users
 end
