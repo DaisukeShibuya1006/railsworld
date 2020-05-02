@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'sessions/new'
   get 'users/new'
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   get '/contact' => 'static_pages#contact'
 
   resources :microposts
-  get '/posts' => "post#index"
+  get '/posts' => 'post#index'
   get 'posts/index'
   get '/signup' => 'users#new'
   post '/singup' => 'users#create'
