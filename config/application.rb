@@ -13,14 +13,14 @@ module AppName
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
-    config.generators do |g|
-      g.test_framework :rspec,
-                       helper_specs: false,
-                       routing_specs: false,
-                       view_specs: false,
-                       controller_specs: false
-    end
+    # config.generators do |g|
+    #   g.test_framework :rspec,
+    #                    helper_specs: false,
+    #                    routing_specs: false,
+    #                    view_specs: false,
+    #                    controller_specs: false
+    # end
 
-    config.generators.system_tests = nil
+    config.generators.system_tests = true
   end
 end
