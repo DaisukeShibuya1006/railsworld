@@ -2,6 +2,6 @@
 
 require 'rails_helper'
 
-RSpec.describe Bloger, type: :model do
-  it
-end
+# RSpec.describe Bloger, type: :model do
+  
+# end
