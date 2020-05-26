@@ -14,7 +14,7 @@ class Micropost < ApplicationRecord
   end
 
   def uniine(user)
-    likes.find_by(user_id: user.id).destory
+    likes.find_by(user_id: user.id).destroy
   end
 
   def iine?(user)
