@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'likes/create'
+  get 'likes/destroy'
   get 'sessions/new'
   get 'users/new'
   get 'persons/new'
@@ -25,4 +27,5 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :microposts, only:[:create, :destroy]
   resources :relationships, only:[:create,:destroy]
+  resources :likes, only: [:create, :destroy]
 end 
