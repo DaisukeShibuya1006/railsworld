@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get '/help' => 'static_pages#help'
   get '/about' => 'static_pages#about'
   get '/contact' => 'static_pages#contact'
-
   resources :microposts
   get '/posts' => 'post#index'
   get 'posts/index'

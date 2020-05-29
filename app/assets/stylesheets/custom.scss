@@ -254,6 +254,8 @@ input {
       display: block;
       padding: 5px 0;
     }
+    height: 50px;
+    margin-top: 50px;
   }
   .timestamp {
     color: $gray-light;
@@ -281,3 +283,18 @@ span.picture {
   }
 }
 
+
+.search_form {
+  overflow: auto;
+  margin: 10px;
+  float: right;
+  .input-group {
+    width: 300px;
+    .form-control {
+      width: 250px;
+    }
+    .btn {
+      width: 50px;
+    }
+  }
+}

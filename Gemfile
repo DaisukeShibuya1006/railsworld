@@ -81,3 +81,5 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
 gem 'counter_culture'
+
+gem 'ransack'
