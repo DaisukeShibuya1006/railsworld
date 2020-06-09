@@ -16,7 +16,10 @@ class MicropostsController < ApplicationController
 
     def show
       @micropost = Micropost.find(params[:id])
+      @message = "Hello, how are you today?"
+      @fine = "I'm fine!!"
     end
+
 
     def destroy
         @micropost.destroy
