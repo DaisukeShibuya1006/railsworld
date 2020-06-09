@@ -83,3 +83,5 @@ gem 'bootstrap-will_paginate'
 gem 'counter_culture'
 
 gem 'ransack'
+
+gem 'pry-rails'
