@@ -10,10 +10,10 @@ class UsersController < ApplicationController
     # @users = User.paginate(page: params[:page])
     if params[:q]
       @q = User.ransack(search_params, activated_true: true)
-      @title = "Search Result"
+      @title = "ユーザー検索"
     else
       @q = User.ransack(activated_true: true)
-      @title = "All users"
+      @title = "全てのユーザー"
     end
     @users = @q.result.paginate(page: params[:page])
   end
