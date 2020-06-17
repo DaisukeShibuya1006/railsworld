@@ -1,7 +1,6 @@
-<% if @feed_items.any? %>
-  <ol class="microposts">
-    <%= render @feed_items %>
-  </ol>
-  <%= will_paginate @feed_items %>
+<% @microposts.each do |micropost| %>
+  <div class="micropost">
+    <%= micropost.content %>
+    <%= link_to  "詳細", micropost_path(micropost) %>
+  </div>
 <% end %>
-

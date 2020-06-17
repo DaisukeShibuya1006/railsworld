@@ -1,0 +1,8 @@
+<h1>投稿一覧</h1>
+<%= flash[:hoge] %>
+<% @hoges.each do |hoge| %>
+  <%= hoge.name%>
+  <%= hoge.content %>
+  <%= link_to  "詳細", hoge_path(hoge)%><br>
+<% end %>
+<%= link_to  "データを追加", hoges_new_path %>

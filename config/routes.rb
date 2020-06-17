@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'hoges/index'
+  get 'hoges/new'
+  post 'hoges/create',as:"hoges"
+  get 'hoges/:id' => 'hoges#show', as: 'hoge'
   get 'likes/create'
   get 'likes/destroy'
   get 'sessions/new'

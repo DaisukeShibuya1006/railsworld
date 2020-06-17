@@ -13,6 +13,8 @@ class StaticPagesController < ApplicationController
       end
       @url = root_path
     end
+
+    @microposts = Micropost.paginate(page: params[:page],per_page: 10)
   end
 
 
