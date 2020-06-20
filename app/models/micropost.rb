@@ -7,7 +7,7 @@ class Micropost < ApplicationRecord
   validate :picture_size
   has_many :likes, dependent: :destroy
   has_many :iine_users, through: :likes, source: :user
- 
+  has_many :comments
 
   def iine(user)
     likes.create(user_id: user.id)

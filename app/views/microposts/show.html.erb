@@ -4,3 +4,16 @@
 <% if current_user.id == @micropost.user_id %>
   <%= link_to  "編集", edit_micropost_path(@micropost) %>
 <% end %>
+
+<p>コメント</p>
+
+<% @comments.each do |comment| %>
+  <%= link_to comment.user.name, comment.user %>
+  <%= comment.content %><br>
+<% end %>
+
+<%= form_for [@micropost, @comment] do |f| %>
+  <%= f.text_field :content %>
+  <%= f.hidden_field :micropost_id, value: @micropost.id %>
+  <%= f.submit 'コメントする' %>
+<% end %>
