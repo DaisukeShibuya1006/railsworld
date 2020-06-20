@@ -21,3 +21,4 @@ services:
       - db:mysql
     stdin_open: true
     tty: true
+    

@@ -22,11 +22,25 @@ class MicropostsController < ApplicationController
       @micropost = Micropost.find(params[:id])
     end
 
+    def edit
+      @micropost = Micropost.find(params[:id])
+    end
+
+    def update
+      @micropost = Micropost.find(params[:id])
+      if @micropost.update_attributes(micropost_params)
+        redirect_to micropost_path
+        flash[:success] = "変更完了！"
+      else
+        render 'edit'
+      end
+    end
+
 
     def destroy
         @micropost.destroy
         flash[:success] = "Micropost deleted"
-        redirect_to request.referrer || root_url
+        redirect_to root_url
     end
 
     def micropost_params
@@ -36,5 +50,11 @@ class MicropostsController < ApplicationController
     def correct_user
         @micropost = current_user.microposts.find_by(id:params[:id])
         redirect_to root_url if @micropost.nil?
+    end
+
+  private
+  
+    def micropost_params
+      params.require(:micropost).permit(:content)
     end
 end

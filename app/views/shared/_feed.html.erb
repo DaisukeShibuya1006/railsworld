@@ -1,6 +1,11 @@
 <% @microposts.each do |micropost| %>
   <div class="micropost">
-    <%= micropost.content %>
-    <%= link_to  "詳細", micropost_path(micropost) %>
+    <%= link_to micropost.user.name, micropost.user %>
+    <%= link_to (micropost_path(micropost)) do %>
+      <%= micropost.content %>
+    <% end %>
+    <% if current_user.id == micropost.user.id %>
+      <%= link_to  "削除", "microposts/#{micropost.id}", method: :delete %>
+    <% end %>
   </div>
 <% end %>
